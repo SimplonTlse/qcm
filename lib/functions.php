@@ -26,9 +26,9 @@ function router (){
 */
 function listQuestions() {
 	$q = [
-		['question'=> 'pates ?', 'answer'=>true],
-		['question'=> 'riz ?', 'answer'=>false],
-		['question'=> 'chocolat ?', 'answer'=>true],
+		['question'=> 'les pâtes ?', 'answer'=>true],
+		['question'=> 'le riz ?', 'answer'=>false],
+		['question'=> 'le chocolat ?', 'answer'=>true],
 	];
 
 	return $q;
@@ -48,7 +48,7 @@ function checkAnswers(){
 		// qui correspond à la position de notre question dans le tableau
 		$idchar = substr($key, 1);
 		// on le transforme en integer
-		$id = intval($idchar, 10); 
+		$id = intval($idchar, 10); // bien vu marie pour la base 10 ;)
 		$question = $questions[$id];
 		//pis on check
 		$questions[$id]['valid'] = compareAnswer($question, $a);
@@ -68,9 +68,23 @@ function compareAnswer($currentQuestion, $answered) {
 	return $isRight;
 }
 
+//
+function rightAnswersCount(){
+	$questions = checkAnswers();
+	$count = 0;
+	foreach($questions as $q){
+		if($q['valid']) {
+			$count++;
+		}
+	}
+	return $count;
+}
+
 //fonction pour debugger plus facilement
 function dd($var){
 	var_dump($var);
 	//cette fonction standard arrête l'execution du script
 	die();
 }
+
+
