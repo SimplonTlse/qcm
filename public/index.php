@@ -5,7 +5,7 @@ c'est la seule page php visible du monde extérieur
 */
 
 // ceci est  une constante; elle est ici utile pour simplifier les include et require
-// et ne pas avoir à se questionner sur leur position par rapport à l'endoir ou ils sont inclus,
+// et ne pas avoir à se questionner sur leur position par rapport à l'endroit où ils sont inclus,
 // on inclue à partir la racine de notre projet et voilà !
 define('BASE', __DIR__ . '/../');
 
